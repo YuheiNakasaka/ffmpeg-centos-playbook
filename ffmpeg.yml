@@ -1,0 +1,14 @@
+- name: setting up ffmpeg environment
+  hosts: ffmpeg
+  sudo: true
+  user: vagrant
+  vars:
+    user_name: vagrant
+    ssh_port: 22
+    hosts_name: ffmpeg
+    ffmpeg_source_dir: /home/{{ user_name }}/ffmpeg_sources
+    ffmpeg_bin_dir: /home/{{ user_name }}/bin
+    ffmpeg_build_dir: /home/{{ user_name }}/ffmpeg_build
+
+  roles:
+    - ffmpeg
